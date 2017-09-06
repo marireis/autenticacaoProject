@@ -1,0 +1,29 @@
+{% extends 'base.html'%}
+
+{% block content %}
+<div class="col-lg-12">
+    <table class="table">
+        <thead>
+
+            <tr>
+                <th>Username</th>
+                <th>Email</th>
+                <th>Ação</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for usuario in lista %}
+        <tr>
+            <td>{{usuario.username}}</td>
+            <td>{{usuario.email}}</td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    <a href="{% url 'registrar_usuario' %}">
+    <button type= "submit" class="btn btn-primary">
+        Cadastrar
+    </button>
+    </a>
+</div>
+{% endblock content%}
